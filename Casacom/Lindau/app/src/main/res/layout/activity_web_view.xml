@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="0dp"
+    tools:context="com.streamnow.lindaumobile.activities.WebViewActivity"
+    android:id="@+id/view_bgnd">
+
+    <include layout="@layout/content_web_view"/>
+
+    <FrameLayout
+        android:id="@+id/webview_top_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/bgnd_image"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:src="@drawable/navbar_bgnd"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:src="@drawable/nav_pill"
+            android:layout_marginBottom="9dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="42dp"
+            android:maxHeight="42dp"
+            android:scaleType="fitCenter"/>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>

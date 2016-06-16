@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Einstellungen</string>
+    <string name="password_hint">Passwort</string>
+    <string name="username_hint">Benutzername</string>
+    <string name="login_button_title1">Weiter ohne Login</string>
+    <string name="login_button_title2">Login</string>
+    <string name="please_wait">Bitte, warten Sie...</string>
+    <string name="network_error">Es war ein Netzwerkfehler.Bitte versuchen Sie es später.</string>
+    <string name="login_error">Benutzername oder Passwort falsch!</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_docman_menu">DocmanMenuActivity</string>
+    <string name="contact_send">Senden</string>
+    <string name="contact_reset">Reset</string>
+    <string name="opening_schedule">Öffnung Zeitplan</string>
+    <string name="no_mail_account">Es gibt keine E-Mail -Clients installiert</string>
+    <string name="send_mail">E-Mail senden</string>
+    <string name="support">Unterstützen</string>
+    <string name="general_docs">Allgemeine Dokumente</string>
+    <string name="personal_docs">Persönliche Dokumente</string>
+    <string name="no_docs_available">Keine Dokumente verfügbar</string>
+</resources>
