@@ -1,6 +1,9 @@
 package com.streamnow.lindaumobile.activities;
 
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -97,10 +100,25 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
             LDService service = (LDService) services.get(position);
             if (service.type.equals("2"))//servicio de webView
             {
-                Intent intent = new Intent(this, WebViewActivity.class);
-                intent.putExtra("api_url", service.apiUrl);
-                intent.putExtra("service_id", service.id);
-                startActivity(intent);
+                if(service.id.equals("29")){//tv
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(service.apiUrl));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.setPackage("com.android.chrome");
+                    try {
+                        startActivity(intent);
+                    } catch (ActivityNotFoundException e) {
+                        // Chrome is probably not installed
+                        intent.setPackage(null);
+                        startActivity(intent);
+                    }
+                }
+                else{
+                    Intent intent = new Intent(this, WebViewActivity.class);
+                    intent.putExtra("api_url", service.apiUrl);
+                    intent.putExtra("service_id", service.id);
+                    startActivity(intent);
+                }
+
             }
             else if (service.type.equals("3"))//servicio youtube
             {
@@ -135,11 +153,15 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
                         startActivity(intent);
                     }
                 }
-                else if (service.type.equals("2"))
+                else if (service.type.equals("2"))//webview simple
                 {
+                    Log.d("ID","ID seleccionado: " + service.id);
                     Intent intent = new Intent(this, WebViewActivity.class);
                     intent.putExtra("api_url", service.apiUrl);
+                    Log.d("API","APU URL: -------------->" + service.apiUrl);
                     startActivity(intent);
+
+
                 }
                 else if (service.type.equals("3"))
                 {

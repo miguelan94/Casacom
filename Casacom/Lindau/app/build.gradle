@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
@@ -26,4 +25,6 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.squareup.picasso:picasso:2.5.2'
+  //  compile 'com.google.gms:google-services:2.0.0-alpha6'
+   // compile 'com.google.android.gms:play-services-gcm:9.0.0'
 }

@@ -45,7 +45,6 @@ public class LDService implements IMenuPrintable //se usa en sessionUser,  el me
     {
         try
         {
-            Log.d("JSON", "JSONObject LDService: " + o.toString());
             if(!o.isNull("api_url")) this.apiUrl = o.getString("api_url");
             if(!o.isNull("active")) this.active = o.getString("active");
             if(!o.isNull("params")) this.params = o.getString("params");

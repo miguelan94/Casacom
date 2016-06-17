@@ -30,7 +30,6 @@ public class LDUserInfo //Se usa en session user, se crea un objeto y se le pasa
     {
         try
         {
-            Log.d("JSON", "JSONObject LDUserInfo: " + o.toString());
             if(!o.isNull("id")) this.id = o.getString("id");
             if(!o.isNull("mobil")) this.mobil = o.getString("mobil");
             if(!o.isNull("status")) this.status = o.getString("status");

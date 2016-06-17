@@ -25,7 +25,6 @@ public class LDCategory implements IMenuPrintable //se usa en SessionUser, en es
     {
         try
         {
-            Log.d("JSON", "JSONObject LDCategory----->: " + o.toString());
             if(!o.isNull("parent_id")) this.parentId = o.getString("parent_id");
             if(!o.isNull("id")) this.id = o.getString("id");
             if(!o.isNull("active")) this.active = o.getString("active");

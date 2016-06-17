@@ -21,7 +21,6 @@ public class LDLanguage//se usa en sessionUser, el metodo array
     {
         try
         {
-            Log.d("JSON", "JSONObject LDLanguage: " + o.toString());
             if (!o.isNull("id")) this.id = o.getString("id");
             if (!o.isNull("iso")) this.iso = o.getString("iso");
             if (!o.isNull("name")) this.name = o.getString("name");

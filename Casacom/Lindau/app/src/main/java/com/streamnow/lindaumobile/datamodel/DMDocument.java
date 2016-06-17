@@ -31,7 +31,6 @@ public class DMDocument extends DMElement implements IMenuPrintable //Los docume
 
         try
         {
-            Log.d("JSON", "JSONObject DMDocument--->: " + o.toString());
             if(!o.isNull("id")) this.id = o.getString("id");
             if(!o.isNull("name")) this.name = o.getString("name");
             if(!o.isNull("description")) this.description = o.getString("description");

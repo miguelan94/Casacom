@@ -28,7 +28,6 @@ public class DMCategory extends DMElement implements IMenuPrintable //llamada en
 
         try
         {
-            Log.d("JSON", "JSONObject DMCategory---->: " + o.toString());
             if(!o.isNull("id")) this.id = o.getString("id");
             if(!o.isNull("category_name")) this.categoryName = o.getString("category_name");
             if(!o.isNull("short_desc")) this.shortDesc = o.getString("short_desc");

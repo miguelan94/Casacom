@@ -29,7 +29,6 @@ public class LDContact //se usa en contact activity
     {
         try
         {
-            Log.d("JSON", "JSONObject LDContact: " + o.toString());
             if(!o.isNull("schedule")) this.schedule = o.getString("schedule");
             if(!o.isNull("city")) this.city = o.getString("city");
             if(!o.isNull("id")) this.id = o.getString("id");

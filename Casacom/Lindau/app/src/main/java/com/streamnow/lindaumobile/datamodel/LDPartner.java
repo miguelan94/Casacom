@@ -32,7 +32,6 @@ public class LDPartner
         Lindau ld = Lindau.getInstance();
         try
         {
-            Log.d("JSON", "JSONObject LDPartner: " + o.toString());
             if(!o.isNull("font_color_top")) this.fontColorTop = ld.colorFromRGBAString(o.getString("font_color_top"));
             if(!o.isNull("font_color_service")) this.fontColorService = ld.colorFromRGBAString(o.getString("font_color_service"));
             if(!o.isNull("font_color_bottom")) this.fontColorBottom = ld.colorFromRGBAString(o.getString("font_color_bottom"));
