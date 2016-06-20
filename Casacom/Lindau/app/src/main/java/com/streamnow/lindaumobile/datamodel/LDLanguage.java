@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /** !
  * Created by Miguel Estévez on 2/2/16.
  */
-public class LDLanguage//se usa en sessionUser, el metodo array
+public class LDLanguage
 {
     public String id;
     public String iso;

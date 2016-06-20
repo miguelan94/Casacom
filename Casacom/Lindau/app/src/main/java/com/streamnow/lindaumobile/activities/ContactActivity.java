@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class ContactActivity extends BaseActivity //se abre en menu Activity
+public class ContactActivity extends BaseActivity
 {
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;

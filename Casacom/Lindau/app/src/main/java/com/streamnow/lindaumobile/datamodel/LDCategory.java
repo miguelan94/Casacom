@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /** !
  * Created by Miguel Estévez on 2/2/16.
  */
-public class LDCategory implements IMenuPrintable //se usa en SessionUser, en este caso se usa el metodo de arrays
+public class LDCategory implements IMenuPrintable
 {
     public String parentId;
     public String id;
@@ -21,7 +21,7 @@ public class LDCategory implements IMenuPrintable //se usa en SessionUser, en es
     public String image;
     public String smartImage;
 
-    public LDCategory(JSONObject o) //se llama desde categories from ARRAY
+    public LDCategory(JSONObject o)
     {
         try
         {

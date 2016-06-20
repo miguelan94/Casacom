@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /** !
  * Created by Miguel Estévez on 09/2/16.
  */
-public class LDContact //se usa en contact activity
+public class LDContact
 {
     public String schedule;
     public String city;

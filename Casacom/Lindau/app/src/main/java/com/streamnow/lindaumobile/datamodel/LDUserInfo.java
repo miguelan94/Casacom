@@ -7,7 +7,7 @@ import org.json.JSONObject;
 /** !
  * Created by Miguel Estévez on 2/2/16.
  */
-public class LDUserInfo //Se usa en session user, se crea un objeto y se le pasa el json
+public class LDUserInfo
 {
     public String id;
     public String mobil;

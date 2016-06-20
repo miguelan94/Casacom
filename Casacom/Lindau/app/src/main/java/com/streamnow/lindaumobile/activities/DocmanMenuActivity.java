@@ -36,7 +36,7 @@ import cz.msebera.android.httpclient.Header;
 /** !
  * Created by Miguel Estévez on 31/1/16.
  */
-public class DocmanMenuActivity extends BaseActivity //se abre en menuActivity
+public class DocmanMenuActivity extends BaseActivity
 {
     private boolean isRootMenu;
     private ArrayList<IMenuPrintable> adapterArray;
@@ -182,10 +182,10 @@ public class DocmanMenuActivity extends BaseActivity //se abre en menuActivity
                 {
                     ArrayList<IMenuPrintable> userTreeArray = new ArrayList<>();
                     userTreeArray.addAll(DMCategory.categoriesWithArray(response.getJSONArray("usertree")));
-                    Log.d("JSON", "JSON Object,userTree-------------->" + response.getJSONArray("usertree"));
+                    Log.d("JSON", "JSON Object,userTree: " + response.getJSONArray("usertree"));
                     ArrayList<IMenuPrintable> repoTreeArray = new ArrayList<>();
                     repoTreeArray.addAll(DMCategory.categoriesWithArray(response.getJSONArray("repotree")));
-                    Log.d("JSON", "JSON Object,repoTree-------------->" + response.getJSONArray("repotree"));
+                    Log.d("JSON", "JSON Object,repoTree: " + response.getJSONArray("repotree"));
                     if( userTreeArray.size() > 0 || repoTreeArray.size() > 0 )
                     {
                         Lindau.getInstance().setUserTree(userTreeArray);

@@ -27,7 +27,7 @@ public class LDPartner
     public String name;
     public String backgroundImage;
 
-    public LDPartner(JSONObject o) //se usa en userInfo y éste a su vez se usa en sessionUser
+    public LDPartner(JSONObject o)
     {
         Lindau ld = Lindau.getInstance();
         try

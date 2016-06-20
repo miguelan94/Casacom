@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /** !
  * Created by Miguel Estévez on 2/2/16.
  */
-public class LDService implements IMenuPrintable //se usa en sessionUser,  el metodo array
+public class LDService implements IMenuPrintable
 {
     public String apiUrl;
     public String active;

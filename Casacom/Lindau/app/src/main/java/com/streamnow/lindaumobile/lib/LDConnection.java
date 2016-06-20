@@ -5,7 +5,7 @@ import com.loopj.android.http.*;
 /**
  * Created by Miguel Estévez on 31/1/16.
  */
-public class LDConnection //Si ttodo va bien, la URL que le envia el servidor es http://esp-development.streamnow.ch/
+public class LDConnection
 {
     private static final String BASE_URL_STRING = "http://route.livingservices.com/";
     private static String _currentUrlString = null; //http://esp-development.streamnow.ch/

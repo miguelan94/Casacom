@@ -29,9 +29,9 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MenuActivity extends BaseActivity//se crea en loginActivity
+public class MenuActivity extends BaseActivity
 {
-    protected final LDSessionUser sessionUser = Lindau.getInstance().getCurrentSessionUser(); //guardamos la sesion del usuario
+    protected final LDSessionUser sessionUser = Lindau.getInstance().getCurrentSessionUser();
     String categoryId;
 
     @Override
@@ -70,7 +70,7 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
         }
         else
         {
-            adapterArray = sessionUser.getAvailableServicesForCategoryId(categoryId);//guardamos los servicios disponibles segun la categoria
+            adapterArray = sessionUser.getAvailableServicesForCategoryId(categoryId);
         }
         RelativeLayout mainBackground = (RelativeLayout) findViewById(R.id.main_menu_background);
         mainBackground.setBackgroundColor(sessionUser.userInfo.partner.colorTop);
@@ -94,11 +94,11 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
     {
         ArrayList<? extends IMenuPrintable> services;
 
-        if( getIntent().getBooleanExtra("sub_menu", false))//Si no hay submenu es porque cuando picnhes tiene que abrir un nuevo  servicio concreto como un webView
+        if( getIntent().getBooleanExtra("sub_menu", false))
         {
             services = sessionUser.getAvailableServicesForCategoryId(categoryId);
             LDService service = (LDService) services.get(position);
-            if (service.type.equals("2"))//servicio de webView
+            if (service.type.equals("2"))//webView service
             {
                 if(service.id.equals("29")){//tv
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(service.apiUrl));
@@ -128,9 +128,9 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
                 startActivity(intent);
             }
         }
-        else//si hay submenu (tras pinchar en un item. No cuenta el principal). Submenu puede ser con 1 solo
+        else
         {
-            services = sessionUser.getAvailableServicesForCategoryId(sessionUser.categories.get(position).id);//obtienes los servicios segun la categoria que has pinchado
+            services = sessionUser.getAvailableServicesForCategoryId(sessionUser.categories.get(position).id);
 
              System.out.println("clicked on item with title " + sessionUser.categories.get(position).name + " it has " + services.size() + " services available");
 
@@ -140,9 +140,9 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
 
                 if (service.type.equals("1"))
                 {
-                    if(service.id.equals("53") || service.id.equals("20")) //servicio de contactos
+                    if(service.id.equals("53") || service.id.equals("20"))
                     {
-                        Intent intent = new Intent(this, ContactActivity.class); //abrimos contacActivity
+                        Intent intent = new Intent(this, ContactActivity.class);
                         startActivity(intent);
                     }
                     else
@@ -153,7 +153,7 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
                         startActivity(intent);
                     }
                 }
-                else if (service.type.equals("2"))//webview simple
+                else if (service.type.equals("2"))
                 {
                     Log.d("ID","ID seleccionado: " + service.id);
                     Intent intent = new Intent(this, WebViewActivity.class);
@@ -173,9 +173,9 @@ public class MenuActivity extends BaseActivity//se crea en loginActivity
             }
             else if (services.size() > 1)
             {
-                Intent intent = new Intent(this, MenuActivity.class);//volvemos abrir otra vez esta actividad pero ahora con un nuevo menu
-                intent.putExtra("category_id", sessionUser.categories.get(position).id);//guardamos en una variable la categoria y asi usarla cuando se vuelva a abrir
-                intent.putExtra("sub_menu", true);//ponemos sub-menu a true ya que habra más de un servicio
+                Intent intent = new Intent(this, MenuActivity.class);
+                intent.putExtra("category_id", sessionUser.categories.get(position).id);
+                intent.putExtra("sub_menu", true);
                 startActivity(intent);
             }
         }

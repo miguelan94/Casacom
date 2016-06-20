@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 /** !
  * Created by Miguel Estévez on 31/1/16.
  */
-public class Lindau extends Application //extendemos application para utilizar las variables de forma global
+public class Lindau extends Application
 {
     private static Lindau sharedInstance;
 
@@ -29,7 +29,7 @@ public class Lindau extends Application //extendemos application para utilizar l
         return this.currentSessionUser;
     }
 
-    public void setCurrentSessionUser(LDSessionUser userInfo)//se fija en LoginActivity, tras loguearse
+    public void setCurrentSessionUser(LDSessionUser userInfo)
     {
         currentSessionUser = userInfo;
     }
@@ -146,9 +146,9 @@ public class Lindau extends Application //extendemos application para utilizar l
     }
 
     @Override
-    public void onCreate() //cuando se crea la aplicacion
+    public void onCreate()
     {
         super.onCreate();
-        sharedInstance = this; //guardamos un objeto de esta clase en sharedInstance para usarlo por el resto de clases
+        sharedInstance = this;
     }
 }
