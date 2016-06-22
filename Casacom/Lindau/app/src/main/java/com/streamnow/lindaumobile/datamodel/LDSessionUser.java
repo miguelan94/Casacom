@@ -23,7 +23,7 @@ public class LDSessionUser
     public String urlTest;
     public String accessToken;
 
-    public LDSessionUser(JSONObject o)
+    public LDSessionUser(JSONObject o) //se crea en la clase LoginActivity. Con la respuesta que enviar el servidor (en JSON) creamos la sesion
     {
         try
         {

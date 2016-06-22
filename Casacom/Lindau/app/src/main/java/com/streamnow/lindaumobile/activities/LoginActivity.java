@@ -153,6 +153,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response)
                 {
+                    // System.out.println("JSONObject: " + response.toString());
+                    Log.d("JSON","JSONObject LoginActivity " + response.toString());
                     try
                     {
                         String url = response.getString("url");
@@ -187,7 +189,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener
 
     private void continueLogin()
     {
+
         String username, password;
+        Intent intent = new Intent(this,RegistrationIntentService.class);
+        startService(intent);
 
         if( userEditText.getText().toString().isEmpty()  && passwdEditText.getText().toString().isEmpty() )//Sin login
         {
@@ -216,7 +221,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener
 
                 try
                 {
-                    sessionUser = new LDSessionUser(response);
+                    sessionUser = new LDSessionUser(response); //creamos objeto de sesion de usuario pasandole los datos que envia el servidor en un JSON
                 }
                 catch(Exception e)
                 {
@@ -228,10 +233,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener
 
                 if( sessionUser != null && sessionUser.accessToken != null )
                 {
-                    Lindau.getInstance().setCurrentSessionUser(sessionUser);
+                    Lindau.getInstance().setCurrentSessionUser(sessionUser);//con el objeto de usuario creado anteriormente, asignamos una sesion de usuario al objeto compartido en la app
 
                     Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-                    startActivity(intent);
+                    startActivity(intent); //abrimos MenuActivity
                     finish();
                 }
                 else

@@ -15,8 +15,8 @@ import java.util.ArrayList;
 /** !
  * Created by Miguel Estévez on 09/2/16.
  */
-public class DMDocument extends DMElement implements IMenuPrintable
-{
+public class DMDocument extends DMElement implements IMenuPrintable //Los documentos dentro de cada categoria de documentos
+{//La llamada se hace desde DMCategory
     public String id;
     public String name;
     public String description;

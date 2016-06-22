@@ -23,7 +23,7 @@ public class MenuAdapter extends BaseAdapter
     private ArrayList<? extends  IMenuPrintable> items;
     private Context context;
 
-    public MenuAdapter(Context context, ArrayList<? extends  IMenuPrintable> items)
+    public MenuAdapter(Context context, ArrayList<? extends  IMenuPrintable> items) //lo creamos en menuActivity
     {
         this.context = context;
         this.items = items;
@@ -38,24 +38,24 @@ public class MenuAdapter extends BaseAdapter
     public int getCount()
     {
         return this.items.size();
-    }
+    } //numero de elementos a visualizar
 
     @Override
-    public Object getItem(int position)
+    public Object getItem(int position) //Devuelve el elemento en una determinada posicion
     {
         return this.items.get(position);
     }
 
     @Override
-    public long getItemId(int position)
+    public long getItemId(int position) //devuelve el id de una determinada posicion
     {
         return position;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
+    public View getView(int position, View convertView, ViewGroup parent) //devuelve la vista correspondiente a una determinada posicion
     {
-        if( convertView == null )
+        if( convertView == null ) //la primera vista
         {
             convertView = ((Activity) context).getLayoutInflater().inflate(R.layout.main_menu_row, parent, false);
         }

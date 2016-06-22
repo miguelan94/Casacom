@@ -14,7 +14,7 @@ import java.util.ArrayList;
 /** !
  * Created by Miguel Estévez on 09/2/16.
  */
-public class DMCategory extends DMElement implements IMenuPrintable
+public class DMCategory extends DMElement implements IMenuPrintable //llamada en DocmanMenuActivity. Tras hacer la peticion de JSON al server, le pasa dicho JSON a DMCategory
 {
     public String id;
     public String categoryName;
@@ -22,7 +22,7 @@ public class DMCategory extends DMElement implements IMenuPrintable
     public ArrayList<DMDocument> docs;
     public ArrayList<DMCategory> categories;
 
-    public DMCategory(JSONObject o)
+    public DMCategory(JSONObject o) //doucment pero categorias dentro de documentos
     {
         this.elementType = DMElementType.DMElementTypeCategory;
 

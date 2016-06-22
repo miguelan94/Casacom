@@ -54,7 +54,7 @@ public class WebViewActivity extends BaseActivity
         ImageView imageView = (ImageView) findViewById(R.id.bgnd_image);
         this.webView = (WebView)findViewById(R.id.webView);
 
-        if( serviceId != null && (serviceId.equals("29") || serviceId.equals("57")) )
+        if( serviceId != null && (serviceId.equals("29") || serviceId.equals("57")) ) //television o musica
         {
             FrameLayout topFrameLayout = (FrameLayout) findViewById(R.id.webview_top_frame);
             topFrameLayout.setVisibility(View.GONE);

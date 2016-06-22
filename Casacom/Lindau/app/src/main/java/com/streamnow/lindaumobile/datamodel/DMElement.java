@@ -7,11 +7,11 @@ import com.streamnow.lindaumobile.interfaces.IMenuPrintable;
  */
 public abstract class DMElement implements IMenuPrintable
 {
-    public enum DMElementType
+    public enum DMElementType //Este objeto puede tomar 2 posibles valores.
     {
         DMElementTypeCategory,
         DMElementTypeDocument
     }
 
-    public DMElementType elementType;
+    public DMElementType elementType; //inicializamos el objeto
 }

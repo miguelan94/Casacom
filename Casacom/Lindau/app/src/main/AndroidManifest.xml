@@ -5,8 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />  <!-- support previous 4.4 KitKat devices-->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <permission android:name="com.streamnow.lindaumobile.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+   <!-- <permission android:name="com.streamnow.lindaumobile.permission.C2D_MESSAGE" android:protectionLevel="signature" />-->
     <uses-permission android:name="com.streamnow.lindaumobile.permission.C2D_MESSAGE" />
     <application
         android:name="com.streamnow.lindaumobile.utils.Lindau"
@@ -44,6 +45,39 @@
             android:label="@string/title_activity_docman_menu"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.streamnow.lindaumobile" />
+            </intent-filter>
+            <intent-filter> <!-- support previous 4.4 KitKat devices-->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.streamnow.lindaumobile" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.streamnow.lindaumobile.activities.RegistrationIntentService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name="com.streamnow.lindaumobile.activities.TokenRefreshListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.streamnow.lindaumobile.activities.PushNotifications"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
